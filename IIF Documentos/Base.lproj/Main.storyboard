@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n0X-X2-V6W">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="gp3-hW-QgS">
+            <objects>
+                <viewController id="n0X-X2-V6W" customClass="loginViewController" customModule="IIF_Documentos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="izl-zE-osE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K1V-42-pEX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfA-PK-BQT">
+                                <rect key="frame" x="40" y="182" width="334" height="532"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="ESCRIBE TU NOMBRE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYk-F6-VuX" customClass="KaedeTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="23" y="127" width="288" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="eXR-2Q-qOJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="Main Blue"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" name="Main Blue"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.82260304689999997" green="0.11267430339999999" blue="0.278460443" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="foregroundColor">
+                                                <color key="value" name="Main Blue"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderSplit">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aYk-F6-VuX" secondAttribute="trailing" constant="23" id="RKo-Gb-Vhr"/>
+                                    <constraint firstItem="aYk-F6-VuX" firstAttribute="top" secondItem="zfA-PK-BQT" secondAttribute="top" constant="127" id="dwb-77-lNX"/>
+                                    <constraint firstItem="aYk-F6-VuX" firstAttribute="leading" secondItem="zfA-PK-BQT" secondAttribute="leading" constant="23" id="x7a-gU-w5E"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="K1V-42-pEX" firstAttribute="leading" secondItem="r2L-QI-A8P" secondAttribute="leading" id="3G4-bq-IT9"/>
+                            <constraint firstItem="K1V-42-pEX" firstAttribute="trailing" secondItem="r2L-QI-A8P" secondAttribute="trailing" id="L8J-rY-J9X"/>
+                            <constraint firstAttribute="bottom" secondItem="K1V-42-pEX" secondAttribute="bottom" id="Mao-gF-lst"/>
+                            <constraint firstItem="zfA-PK-BQT" firstAttribute="leading" secondItem="r2L-QI-A8P" secondAttribute="leading" constant="40" id="Vl0-3S-zlw"/>
+                            <constraint firstItem="K1V-42-pEX" firstAttribute="top" secondItem="izl-zE-osE" secondAttribute="top" id="aHT-Py-TVc"/>
+                            <constraint firstItem="r2L-QI-A8P" firstAttribute="trailing" secondItem="zfA-PK-BQT" secondAttribute="trailing" constant="40" id="bby-ag-JF9"/>
+                            <constraint firstItem="zfA-PK-BQT" firstAttribute="top" secondItem="r2L-QI-A8P" secondAttribute="top" constant="138" id="pgL-ya-4Ml"/>
+                            <constraint firstItem="r2L-QI-A8P" firstAttribute="bottom" secondItem="zfA-PK-BQT" secondAttribute="bottom" constant="148" id="zk2-PV-8Hq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r2L-QI-A8P"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginView" destination="zfA-PK-BQT" id="yfJ-oE-7pR"/>
+                        <outlet property="nameTF" destination="aYk-F6-VuX" id="ZBb-0d-aq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyy-Gz-onn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="-577.23214285714278"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IIF_Documentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="Main Blue"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loginBackground" width="1125" height="2436"/>
+        <namedColor name="Main Blue">
+            <color red="0.035000000149011612" green="0.092000000178813934" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

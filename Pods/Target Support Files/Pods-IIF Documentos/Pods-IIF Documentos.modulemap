@@ -1,0 +1,6 @@
+framework module Pods_IIF_Documentos {
+  umbrella header "Pods-IIF Documentos-umbrella.h"
+
+  export *
+  module * { export * }
+}

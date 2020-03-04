@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6EF0D6033279B515C7C239 /* Pods_IIF_Documentos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53B9596D1B45C39ED3B96B3 /* Pods_IIF_Documentos.framework */; };
 		CFCA1C17241047B50016A6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA1C16241047B50016A6D8 /* AppDelegate.swift */; };
 		CFCA1C19241047B50016A6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA1C18241047B50016A6D8 /* SceneDelegate.swift */; };
-		CFCA1C1B241047B50016A6D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA1C1A241047B50016A6D8 /* ViewController.swift */; };
 		CFCA1C1E241047B50016A6D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCA1C1C241047B50016A6D8 /* Main.storyboard */; };
 		CFCA1C20241047B80016A6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFCA1C1F241047B80016A6D8 /* Assets.xcassets */; };
 		CFCA1C23241047B80016A6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCA1C21241047B80016A6D8 /* LaunchScreen.storyboard */; };
+		CFCA1C30241055440016A6D8 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA1C2F241055440016A6D8 /* loginViewController.swift */; };
+		CFCA1C3224105EBB0016A6D8 /* TextFieldEffects in Resources */ = {isa = PBXBuildFile; fileRef = CFCA1C3124105EBB0016A6D8 /* TextFieldEffects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78B47B99672920E58F564A80 /* Pods-IIF Documentos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IIF Documentos.debug.xcconfig"; path = "Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos.debug.xcconfig"; sourceTree = "<group>"; };
+		7E9ED24895A687FCC64B0898 /* Pods-IIF Documentos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IIF Documentos.release.xcconfig"; path = "Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos.release.xcconfig"; sourceTree = "<group>"; };
 		CFCA1C13241047B50016A6D8 /* IIF Documentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IIF Documentos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCA1C16241047B50016A6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFCA1C18241047B50016A6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CFCA1C1A241047B50016A6D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CFCA1C1D241047B50016A6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFCA1C1F241047B80016A6D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFCA1C22241047B80016A6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFCA1C24241047B80016A6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFCA1C2F241055440016A6D8 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		CFCA1C3124105EBB0016A6D8 /* TextFieldEffects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TextFieldEffects; sourceTree = "<group>"; };
+		D53B9596D1B45C39ED3B96B3 /* Pods_IIF_Documentos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IIF_Documentos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6EF0D6033279B515C7C239 /* Pods_IIF_Documentos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561E4052FB91EA254A849182 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D53B9596D1B45C39ED3B96B3 /* Pods_IIF_Documentos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CFCA1C0A241047B50016A6D8 = {
 			isa = PBXGroup;
 			children = (
+				CFCA1C3124105EBB0016A6D8 /* TextFieldEffects */,
+				CFCA1C2E241055330016A6D8 /* Login */,
 				CFCA1C15241047B50016A6D8 /* IIF Documentos */,
 				CFCA1C14241047B50016A6D8 /* Products */,
+				D93FB20EE1B9F46E6DEE4D91 /* Pods */,
+				561E4052FB91EA254A849182 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +77,30 @@
 			children = (
 				CFCA1C16241047B50016A6D8 /* AppDelegate.swift */,
 				CFCA1C18241047B50016A6D8 /* SceneDelegate.swift */,
-				CFCA1C1A241047B50016A6D8 /* ViewController.swift */,
 				CFCA1C1C241047B50016A6D8 /* Main.storyboard */,
 				CFCA1C1F241047B80016A6D8 /* Assets.xcassets */,
 				CFCA1C21241047B80016A6D8 /* LaunchScreen.storyboard */,
 				CFCA1C24241047B80016A6D8 /* Info.plist */,
 			);
 			path = "IIF Documentos";
+			sourceTree = "<group>";
+		};
+		CFCA1C2E241055330016A6D8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CFCA1C2F241055440016A6D8 /* loginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D93FB20EE1B9F46E6DEE4D91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78B47B99672920E58F564A80 /* Pods-IIF Documentos.debug.xcconfig */,
+				7E9ED24895A687FCC64B0898 /* Pods-IIF Documentos.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFCA1C27241047B80016A6D8 /* Build configuration list for PBXNativeTarget "IIF Documentos" */;
 			buildPhases = (
+				7A10788C1371D535F2CDEE31 /* [CP] Check Pods Manifest.lock */,
 				CFCA1C0F241047B50016A6D8 /* Sources */,
 				CFCA1C10241047B50016A6D8 /* Frameworks */,
 				CFCA1C11241047B50016A6D8 /* Resources */,
+				557F8E4645016EAAD66BF4A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFCA1C23241047B80016A6D8 /* LaunchScreen.storyboard in Resources */,
+				CFCA1C3224105EBB0016A6D8 /* TextFieldEffects in Resources */,
 				CFCA1C20241047B80016A6D8 /* Assets.xcassets in Resources */,
 				CFCA1C1E241047B50016A6D8 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +172,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		557F8E4645016EAAD66BF4A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A10788C1371D535F2CDEE31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IIF Documentos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFCA1C0F241047B50016A6D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFCA1C1B241047B50016A6D8 /* ViewController.swift in Sources */,
 				CFCA1C17241047B50016A6D8 /* AppDelegate.swift in Sources */,
 				CFCA1C19241047B50016A6D8 /* SceneDelegate.swift in Sources */,
+				CFCA1C30241055440016A6D8 /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +363,13 @@
 		};
 		CFCA1C28241047B80016A6D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78B47B99672920E58F564A80 /* Pods-IIF Documentos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RW3S42MR2;
 				INFOPLIST_FILE = "IIF Documentos/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,17 +377,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "broandonDevelops.IIF-Documentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CFCA1C29241047B80016A6D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E9ED24895A687FCC64B0898 /* Pods-IIF Documentos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RW3S42MR2;
 				INFOPLIST_FILE = "IIF Documentos/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "broandonDevelops.IIF-Documentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
