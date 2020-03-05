@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import LazyFadeInView
 
 class loginViewController: UIViewController {
     
     //MARK: Outlets
     
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var jobTF: UITextField!
     
     //MARK: viewDid
     
@@ -24,19 +28,49 @@ class loginViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        UIView.animate(withDuration: 2, animations: {
+            
+            self.logoImage.alpha = 1
+            
+        })
+        
+    }
+    
     //MARK: Funcs
     
     func configureView() {
         
-        loginView.layer.cornerRadius = 50
+        // White view
+        loginView.roundCorners([.topLeft, .topRight], radius: 35)
         loginView.layer.shadowColor = UIColor.black.cgColor
         loginView.layer.shadowOpacity = 1
         loginView.layer.shadowOffset = .zero
         loginView.layer.shadowRadius = 10
+        
+        // Name textfield
         nameTF.layer.cornerRadius = 15
+        
+        // Job textfield
+        jobTF.layer.cornerRadius = 15
+        
+        // The login button
+        loginButton.roundCorners([.bottomLeft, .bottomRight], radius: 35)
+        
+        // Logo transparency
+        logoImage.alpha = 0
+        
     }
     
     //MARK: Buttons
+    
+    @IBAction func loginButton(_ sender: Any) {
+    
+        UserDefaults.standard.set(true, forKey: "loggedIn")
+
+    
+    }
     
     //MARK: Extensions
     

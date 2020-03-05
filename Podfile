@@ -9,5 +9,7 @@ target 'IIF Documentos' do
   
   pod 'TextFieldEffects'
   pod 'IQKeyboardManager'
-
+  pod 'Hero'
+  pod 'LazyFadeInView'
+  
 end
