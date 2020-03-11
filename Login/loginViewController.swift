@@ -8,6 +8,7 @@
 
 import UIKit
 import LazyFadeInView
+import Hero
 
 class loginViewController: UIViewController {
     
@@ -66,10 +67,41 @@ class loginViewController: UIViewController {
     //MARK: Buttons
     
     @IBAction func loginButton(_ sender: Any) {
-    
+        
+        if nameTF.text?.isEmpty == true {
+            
+            let alert = UIAlertController(title: "Error", message: "Por favor introduce tu nombre.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Reintentar", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            
+            return
+            
+        }
+        
+        if jobTF.text?.isEmpty == true {
+            
+            let alert = UIAlertController(title: "Error", message: "Por favor introduce tu nombre.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Reintentar", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            
+            return
+            
+        }
+        
         UserDefaults.standard.set(true, forKey: "loggedIn")
-
-    
+        
+        self.hero.isEnabled = true
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "mainViewController") as! mainViewController
+        newViewController.hero.modalAnimationType = .autoReverse(presenting: .pageOut(direction: .left))
+        
+        self.hero.replaceViewController(with: newViewController)
+        
     }
     
     //MARK: Extensions
