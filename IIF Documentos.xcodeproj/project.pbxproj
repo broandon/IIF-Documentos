@@ -12,6 +12,9 @@
 		9D55E0FA241095DF000B5818 /* loadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */; };
 		9D55E0FD2410977C000B5818 /* loadingVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9D55E0FC2410977C000B5818 /* loadingVideo.mp4 */; };
 		9D6FB5CC2410B62D005F9719 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FB5CB2410B62D005F9719 /* mainViewController.swift */; };
+		9DE700D6241B58DC00AB0636 /* documentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE700D5241B58DC00AB0636 /* documentViewController.swift */; };
+		9DE700D9241B622E00AB0636 /* documentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE700D7241B622E00AB0636 /* documentsTableViewCell.swift */; };
+		9DE700DA241B622E00AB0636 /* documentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE700D8241B622E00AB0636 /* documentsTableViewCell.xib */; };
 		CF51D73124184F74002CD70A /* CNPP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CF51D72F24184F74002CD70A /* CNPP.pdf */; };
 		CF51D73224184F74002CD70A /* CPEM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CF51D73024184F74002CD70A /* CPEM.pdf */; };
 		CFCA1C17241047B50016A6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA1C16241047B50016A6D8 /* AppDelegate.swift */; };
@@ -27,9 +30,11 @@
 		7E9ED24895A687FCC64B0898 /* Pods-IIF Documentos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IIF Documentos.release.xcconfig"; path = "Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos.release.xcconfig"; sourceTree = "<group>"; };
 		9D55E0F724108E53000B5818 /* extensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsViewController.swift; sourceTree = "<group>"; };
 		9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingScreenViewController.swift; sourceTree = "<group>"; };
-		9D55E0FB241096AB000B5818 /* loadingVideo.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = loadingVideo.m4v; sourceTree = "<group>"; };
 		9D55E0FC2410977C000B5818 /* loadingVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loadingVideo.mp4; sourceTree = "<group>"; };
 		9D6FB5CB2410B62D005F9719 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		9DE700D5241B58DC00AB0636 /* documentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentViewController.swift; sourceTree = "<group>"; };
+		9DE700D7241B622E00AB0636 /* documentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentsTableViewCell.swift; sourceTree = "<group>"; };
+		9DE700D8241B622E00AB0636 /* documentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = documentsTableViewCell.xib; sourceTree = "<group>"; };
 		CF51D72F24184F74002CD70A /* CNPP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CNPP.pdf; sourceTree = "<group>"; };
 		CF51D73024184F74002CD70A /* CPEM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CPEM.pdf; sourceTree = "<group>"; };
 		CFCA1C13241047B50016A6D8 /* IIF Documentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IIF Documentos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,8 +80,18 @@
 			isa = PBXGroup;
 			children = (
 				9D6FB5CB2410B62D005F9719 /* mainViewController.swift */,
+				9DE700D7241B622E00AB0636 /* documentsTableViewCell.swift */,
+				9DE700D8241B622E00AB0636 /* documentsTableViewCell.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		9DE700D4241B58B400AB0636 /* PDF Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				9DE700D5241B58DC00AB0636 /* documentViewController.swift */,
+			);
+			path = "PDF Viewer";
 			sourceTree = "<group>";
 		};
 		CF51D72E24184F24002CD70A /* PDF Files */ = {
@@ -91,6 +106,7 @@
 		CFCA1C0A241047B50016A6D8 = {
 			isa = PBXGroup;
 			children = (
+				9DE700D4241B58B400AB0636 /* PDF Viewer */,
 				9D6FB5CA2410B61B005F9719 /* Main */,
 				9D55E0F624108E2C000B5818 /* Tools */,
 				CFCA1C2E241055330016A6D8 /* Login */,
@@ -119,8 +135,6 @@
 				CFCA1C1F241047B80016A6D8 /* Assets.xcassets */,
 				CFCA1C21241047B80016A6D8 /* LaunchScreen.storyboard */,
 				CFCA1C24241047B80016A6D8 /* Info.plist */,
-				9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */,
-				9D55E0FB241096AB000B5818 /* loadingVideo.m4v */,
 				9D55E0FC2410977C000B5818 /* loadingVideo.mp4 */,
 			);
 			path = "IIF Documentos";
@@ -129,6 +143,7 @@
 		CFCA1C2E241055330016A6D8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */,
 				CFCA1C2F241055440016A6D8 /* loginViewController.swift */,
 			);
 			path = Login;
@@ -203,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE700DA241B622E00AB0636 /* documentsTableViewCell.xib in Resources */,
 				CF51D73124184F74002CD70A /* CNPP.pdf in Resources */,
 				9D55E0FD2410977C000B5818 /* loadingVideo.mp4 in Resources */,
 				CFCA1C23241047B80016A6D8 /* LaunchScreen.storyboard in Resources */,
@@ -264,6 +280,8 @@
 				9D55E0F824108E53000B5818 /* extensionsViewController.swift in Sources */,
 				CFCA1C17241047B50016A6D8 /* AppDelegate.swift in Sources */,
 				CFCA1C19241047B50016A6D8 /* SceneDelegate.swift in Sources */,
+				9DE700D6241B58DC00AB0636 /* documentViewController.swift in Sources */,
+				9DE700D9241B622E00AB0636 /* documentsTableViewCell.swift in Sources */,
 				9D55E0FA241095DF000B5818 /* loadingScreenViewController.swift in Sources */,
 				CFCA1C30241055440016A6D8 /* loginViewController.swift in Sources */,
 				9D6FB5CC2410B62D005F9719 /* mainViewController.swift in Sources */,

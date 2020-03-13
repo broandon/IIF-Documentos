@@ -92,6 +92,10 @@ class loginViewController: UIViewController {
             
         }
         
+        let name = nameTF.text
+        
+        UserDefaults.standard.set(name, forKey: "Name")
+        
         UserDefaults.standard.set(true, forKey: "loggedIn")
         
         self.hero.isEnabled = true
@@ -104,6 +108,6 @@ class loginViewController: UIViewController {
         
     }
     
-    //MARK: Extensions
-    
 }
+
+//MARK: Extensions
