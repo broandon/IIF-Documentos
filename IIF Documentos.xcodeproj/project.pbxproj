@@ -23,6 +23,9 @@
 		CFCA1C20241047B80016A6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFCA1C1F241047B80016A6D8 /* Assets.xcassets */; };
 		CFCA1C23241047B80016A6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCA1C21241047B80016A6D8 /* LaunchScreen.storyboard */; };
 		CFCA1C30241055440016A6D8 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA1C2F241055440016A6D8 /* loginViewController.swift */; };
+		CFEFA6CF241C3B9000DF73C5 /* CPF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CFEFA6CE241C3B8F00DF73C5 /* CPF.pdf */; };
+		CFEFA6D1241C3BE100DF73C5 /* CM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CFEFA6D0241C3BE100DF73C5 /* CM.pdf */; };
+		CFEFA6D3241C3C0F00DF73C5 /* CVM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CFEFA6D2241C3C0F00DF73C5 /* CVM.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		CFCA1C22241047B80016A6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFCA1C24241047B80016A6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFCA1C2F241055440016A6D8 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		CFEFA6CE241C3B8F00DF73C5 /* CPF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CPF.pdf; sourceTree = "<group>"; };
+		CFEFA6D0241C3BE100DF73C5 /* CM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CM.pdf; sourceTree = "<group>"; };
+		CFEFA6D2241C3C0F00DF73C5 /* CVM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CVM.pdf; sourceTree = "<group>"; };
 		D53B9596D1B45C39ED3B96B3 /* Pods_IIF_Documentos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IIF_Documentos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +105,9 @@
 			children = (
 				CF51D72F24184F74002CD70A /* CNPP.pdf */,
 				CF51D73024184F74002CD70A /* CPEM.pdf */,
+				CFEFA6CE241C3B8F00DF73C5 /* CPF.pdf */,
+				CFEFA6D0241C3BE100DF73C5 /* CM.pdf */,
+				CFEFA6D2241C3C0F00DF73C5 /* CVM.pdf */,
 			);
 			path = "PDF Files";
 			sourceTree = "<group>";
@@ -218,10 +227,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEFA6D1241C3BE100DF73C5 /* CM.pdf in Resources */,
+				CFEFA6CF241C3B9000DF73C5 /* CPF.pdf in Resources */,
 				9DE700DA241B622E00AB0636 /* documentsTableViewCell.xib in Resources */,
 				CF51D73124184F74002CD70A /* CNPP.pdf in Resources */,
 				9D55E0FD2410977C000B5818 /* loadingVideo.mp4 in Resources */,
 				CFCA1C23241047B80016A6D8 /* LaunchScreen.storyboard in Resources */,
+				CFEFA6D3241C3C0F00DF73C5 /* CVM.pdf in Resources */,
 				CF51D73224184F74002CD70A /* CPEM.pdf in Resources */,
 				CFCA1C20241047B80016A6D8 /* Assets.xcassets in Resources */,
 				CFCA1C1E241047B50016A6D8 /* Main.storyboard in Resources */,

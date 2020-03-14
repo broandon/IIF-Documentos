@@ -9,16 +9,23 @@
 import UIKit
 
 class documentsTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var nameText: UILabel!
+    @IBOutlet weak var documentImage: UIImageView!
+    @IBOutlet weak var imageBackground: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        imageBackground.layer.cornerRadius = imageBackground.bounds.height / 2
+        imageBackground.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        
+        documentImage.layer.cornerRadius = documentImage.bounds.height / 2
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

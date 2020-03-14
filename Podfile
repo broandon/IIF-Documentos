@@ -11,5 +11,6 @@ target 'IIF Documentos' do
   pod 'IQKeyboardManager'
   pod 'Hero'
   pod 'LazyFadeInView'
+  pod 'Floaty'
   
 end

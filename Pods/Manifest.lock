@@ -1,10 +1,12 @@
 PODS:
+  - Floaty (4.2.0)
   - Hero (1.5.0)
   - IQKeyboardManager (6.5.5)
   - LazyFadeInView (1.0.0)
   - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
+  - Floaty
   - Hero
   - IQKeyboardManager
   - LazyFadeInView
@@ -12,17 +14,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Floaty
     - Hero
     - IQKeyboardManager
     - LazyFadeInView
     - TextFieldEffects
 
 SPEC CHECKSUMS:
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   LazyFadeInView: 442c59c427f865754c380b600cc3ac0d750f046a
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 06f881a4bf77485ae4520e562293863747f3e899
+PODFILE CHECKSUM: 6c00f0e2b9fc689a980ab6041b55956a137fa201
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.8.4

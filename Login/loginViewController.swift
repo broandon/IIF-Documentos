@@ -44,7 +44,8 @@ class loginViewController: UIViewController {
     func configureView() {
         
         // White view
-        loginView.roundCorners([.topLeft, .topRight], radius: 35)
+        loginView.layer.cornerRadius = 35
+        loginView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         loginView.layer.shadowColor = UIColor.black.cgColor
         loginView.layer.shadowOpacity = 1
         loginView.layer.shadowOffset = .zero
@@ -57,7 +58,8 @@ class loginViewController: UIViewController {
         jobTF.layer.cornerRadius = 15
         
         // The login button
-        loginButton.roundCorners([.bottomLeft, .bottomRight], radius: 35)
+        loginButton.layer.cornerRadius = 35
+        loginButton.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         // Logo transparency
         logoImage.alpha = 0
@@ -102,7 +104,8 @@ class loginViewController: UIViewController {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "mainViewController") as! mainViewController
-        newViewController.hero.modalAnimationType = .autoReverse(presenting: .pageOut(direction: .left))
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.hero.modalAnimationType = .fade
         
         self.hero.replaceViewController(with: newViewController)
         

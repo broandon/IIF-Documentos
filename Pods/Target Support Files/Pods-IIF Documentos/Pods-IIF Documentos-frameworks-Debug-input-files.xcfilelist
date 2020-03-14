@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework
 ${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/LazyFadeInView/LazyFadeInView.framework

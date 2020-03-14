@@ -67,6 +67,7 @@ class loadingScreenViewController: UIViewController {
         } else {
             
             configureView()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
                 
                 self.hero.isEnabled = true
