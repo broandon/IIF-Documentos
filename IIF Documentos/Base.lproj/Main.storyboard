@@ -370,35 +370,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgu-Dh-9hB" customClass="Floaty" customModule="Floaty">
-                                <rect key="frame" x="333" y="755" width="45" height="45"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="1tw-XT-AHM"/>
-                                    <constraint firstAttribute="height" constant="45" id="zyr-PP-JIM"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoCloseOnTap" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                        <color key="value" name="Main Blue"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonShadowColor">
-                                        <color key="value" name="Main Purple"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="plusColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rotationDegrees">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="animationSpeed">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="itemSize">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1215628311" green="0.12918630240000001" blue="0.141189754" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -410,11 +381,9 @@
                             <constraint firstItem="hnB-g8-XcV" firstAttribute="leading" secondItem="f33-4r-8rZ" secondAttribute="leading" id="QFc-8k-C7R"/>
                             <constraint firstItem="f33-4r-8rZ" firstAttribute="trailing" secondItem="9zi-Kq-kbD" secondAttribute="trailing" constant="20" id="ZZk-Ty-4BQ"/>
                             <constraint firstAttribute="bottom" secondItem="hnB-g8-XcV" secondAttribute="bottom" id="Zzj-Be-dZq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tgu-Dh-9hB" secondAttribute="trailing" constant="16" id="e9n-GU-B00"/>
                             <constraint firstItem="nUI-Iu-Zid" firstAttribute="leading" secondItem="f33-4r-8rZ" secondAttribute="leading" constant="20" id="f6b-Oi-yeb"/>
                             <constraint firstItem="hnB-g8-XcV" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="83" id="fJ1-9R-9Fx"/>
                             <constraint firstItem="nUI-Iu-Zid" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="20" id="ibR-ic-FiD"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="tgu-Dh-9hB" secondAttribute="bottom" constant="8" id="jEQ-Uc-4xG"/>
                             <constraint firstItem="dKz-pp-b6r" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="25" id="m6s-Oi-1sb"/>
                             <constraint firstItem="7Xu-ms-jG1" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="20" id="qak-ic-yal"/>
                         </constraints>
@@ -442,9 +411,6 @@
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <namedColor name="Main Blue">
             <color red="0.035000000149011612" green="0.092000000178813934" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Main Purple">
-            <color red="0.41699999570846558" green="0.10000000149011612" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

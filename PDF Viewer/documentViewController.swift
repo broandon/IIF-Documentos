@@ -8,14 +8,18 @@
 
 import UIKit
 import PDFKit
+import Floaty
 
 class documentViewController: UIViewController, PDFDocumentDelegate {
     
     //MARK: Outlets
     
     var image: UIImage?
+    var stringStarting: String?
     var searchedItem: PDFSelection?
     var mainDocument: PDFDocument!
+    var pdfdocument: PDFDocument?
+
     
     let documentName = UserDefaults.standard.value(forKey: "documentName") as! String
     
@@ -28,7 +32,14 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(documentName)
+        setupDocumentViewer()
+        optionsButton()
+        
+    }
+    
+    //MARK: Funcs
+    
+    func setupDocumentViewer() {
         
         guard let path = Bundle.main.url(forResource: documentName, withExtension: "pdf") else { return }
         
@@ -41,21 +52,34 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    func optionsButton() {
         
-        let searchText = search.text!
-                
-        self.mainDocument.beginFindString(searchText, withOptions: .caseInsensitive)
+        let floaty = Floaty()
+        floaty.buttonColor = UIColor(named: "Main Blue") ?? UIColor.black
+        floaty.plusColor = UIColor.white
+        floaty.addItem("Buscar", icon: UIImage(named: "searchIcon")!, handler: { item in
+            
+            self.searchBtnClick()
+            
+            floaty.close()
+        })
+        self.view.addSubview(floaty)
         
     }
     
-    //MARK: Funcs
+    func searchBtnClick() {
+        let searchViewController = SearchTableViewController()
+        searchViewController.pdfDocument = mainDocument
+        searchViewController.delegate = self
+        
+        let nav = UINavigationController(rootViewController: searchViewController)
+        self.present(nav, animated: true, completion:nil)
+    }
     
     func documentDidEndDocumentFind(_ notification: Notification) {
         print("Ended search")
         documentViewer.setCurrentSelection(searchedItem, animate: true)
     }
-    
     
     func documentDidFindMatch(_ notification: Notification) {
         print("foundMatch")
@@ -75,16 +99,18 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     
     @IBAction func close(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: {
-            
-            print("Gone")
-            
-        })
+        self.dismiss(animated: true, completion: nil)
         
     }
-    
-    
     
 }
 
 //MARK: Extensions
+
+extension documentViewController: SearchTableViewControllerDelegate {
+    func searchTableViewController(_ searchTableViewController: SearchTableViewController, didSelectSerchResult selection: PDFSelection) {
+        selection.color = UIColor.yellow
+        documentViewer.currentSelection = selection
+        documentViewer.go(to: selection)
+    }
+}
