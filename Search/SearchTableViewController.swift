@@ -32,6 +32,7 @@ class SearchTableViewController: UITableViewController {
         searchBar.searchBarStyle = .minimal
         searchBar.backgroundColor = UIColor(named: "Main Blue")!
         searchBar.tintColor = UIColor.white
+        searchBar.barStyle = .black
         navigationItem.titleView = searchBar
         
         tableView.register(UINib(nibName: "SearchViewCell", bundle: nil), forCellReuseIdentifier: "SearchViewCell")

@@ -365,26 +365,18 @@
                                     <action selector="close:" destination="gC8-nK-1T8" eventType="touchUpInside" id="HdG-aW-YGx"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKz-pp-b6r">
-                                <rect key="frame" x="88" y="25" width="238" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.1215628311" green="0.12918630240000001" blue="0.141189754" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="dKz-pp-b6r" firstAttribute="leading" secondItem="7Xu-ms-jG1" secondAttribute="trailing" constant="23" id="3EN-dj-LCb"/>
                             <constraint firstItem="7Xu-ms-jG1" firstAttribute="leading" secondItem="f33-4r-8rZ" secondAttribute="leading" constant="20" id="3eB-Fl-Wye"/>
                             <constraint firstItem="hnB-g8-XcV" firstAttribute="trailing" secondItem="f33-4r-8rZ" secondAttribute="trailing" id="6gK-MS-wY1"/>
                             <constraint firstItem="9zi-Kq-kbD" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="20" id="CIZ-NY-2U1"/>
-                            <constraint firstItem="9zi-Kq-kbD" firstAttribute="leading" secondItem="dKz-pp-b6r" secondAttribute="trailing" constant="23" id="H7Z-yN-hHW"/>
                             <constraint firstItem="hnB-g8-XcV" firstAttribute="leading" secondItem="f33-4r-8rZ" secondAttribute="leading" id="QFc-8k-C7R"/>
                             <constraint firstItem="f33-4r-8rZ" firstAttribute="trailing" secondItem="9zi-Kq-kbD" secondAttribute="trailing" constant="20" id="ZZk-Ty-4BQ"/>
                             <constraint firstAttribute="bottom" secondItem="hnB-g8-XcV" secondAttribute="bottom" id="Zzj-Be-dZq"/>
                             <constraint firstItem="nUI-Iu-Zid" firstAttribute="leading" secondItem="f33-4r-8rZ" secondAttribute="leading" constant="20" id="f6b-Oi-yeb"/>
                             <constraint firstItem="hnB-g8-XcV" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="83" id="fJ1-9R-9Fx"/>
                             <constraint firstItem="nUI-Iu-Zid" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="20" id="ibR-ic-FiD"/>
-                            <constraint firstItem="dKz-pp-b6r" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="25" id="m6s-Oi-1sb"/>
                             <constraint firstItem="7Xu-ms-jG1" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="20" id="qak-ic-yal"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f33-4r-8rZ"/>
@@ -393,7 +385,6 @@
                     <connections>
                         <outlet property="documentViewer" destination="hnB-g8-XcV" id="T5Y-9c-h7Q"/>
                         <outlet property="documentVisualAid" destination="9zi-Kq-kbD" id="5GJ-ou-mFM"/>
-                        <outlet property="search" destination="dKz-pp-b6r" id="kzG-1F-Y5T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPy-z2-N8T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
