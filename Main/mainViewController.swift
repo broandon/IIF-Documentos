@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import SideMenu
 
-class mainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol getOut {
     
+    func logout2()
+    
+}
+
+class mainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, getOut {
+
     //MARK: Outlets
     
     @IBOutlet weak var blackView: UIView!
@@ -98,6 +105,7 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "documentViewController") as! documentViewController
         newViewController.image = documentImage
         newViewController.isModalInPresentation = true
+        newViewController.delegate = self
         present(newViewController, animated: true, completion: {
             
             print("Here")
@@ -107,6 +115,19 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //MARK: Funcs
+    
+    func logout2() {
+        
+        print("called")
+        UserDefaults.standard.set(false, forKey: "loggedIn")
+        self.hero.isEnabled = true
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+        newViewController.hero.modalAnimationType = .autoReverse(presenting: .pageOut(direction: .right))
+        self.hero.replaceViewController(with: newViewController)
+        
+    }
+
     
     private func configureTable() {
         
@@ -172,6 +193,24 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
         newViewController.hero.modalAnimationType = .autoReverse(presenting: .pageOut(direction: .right))
         self.hero.replaceViewController(with: newViewController)
+        
+    }
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+        
+        let menu = storyboard!.instantiateViewController(withIdentifier: "bitches") as! SideMenuNavigationController
+            
+        let vc = settingsTableViewController()
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+        
+        menu.alwaysAnimate = true
+        menu.blurEffectStyle = .prominent
+        menu.leftSide = true
+        menu.statusBarEndAlpha = 0
+        menu.presentationStyle = .viewSlideOutMenuOut
+        
+ //       present(menu, animated: true, completion: nil)
         
     }
     

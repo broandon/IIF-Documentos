@@ -226,15 +226,27 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDJ-sd-8nH">
+                                        <rect key="frame" x="25" y="55" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="J4T-If-tqP"/>
+                                            <constraint firstAttribute="height" constant="45" id="U4Z-oh-46r"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="sideMenuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G6b-1N-Iub"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.051332481210000003" green="0.091724462810000004" blue="0.1522519886" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="fRQ-CQ-fZf" firstAttribute="leading" secondItem="rBF-yT-aTI" secondAttribute="leading" constant="90" id="0rt-Ul-Pkp"/>
                                     <constraint firstAttribute="trailing" secondItem="fRQ-CQ-fZf" secondAttribute="trailing" constant="90" id="4Rt-Xs-bpf"/>
                                     <constraint firstAttribute="height" constant="551" id="90s-cm-fFf"/>
+                                    <constraint firstItem="vDJ-sd-8nH" firstAttribute="top" secondItem="rBF-yT-aTI" secondAttribute="top" constant="55" id="Htt-97-XnG"/>
                                     <constraint firstAttribute="trailing" secondItem="s8z-Vd-XSF" secondAttribute="trailing" constant="25" id="MAJ-mp-wU5"/>
                                     <constraint firstItem="s8z-Vd-XSF" firstAttribute="leading" secondItem="49L-7g-qH9" secondAttribute="trailing" constant="20" id="MfY-FU-emh"/>
                                     <constraint firstItem="soJ-uy-eBR" firstAttribute="top" secondItem="rBF-yT-aTI" secondAttribute="top" constant="55" id="eOG-8k-aIH"/>
+                                    <constraint firstItem="vDJ-sd-8nH" firstAttribute="leading" secondItem="rBF-yT-aTI" secondAttribute="leading" constant="25" id="gow-qE-R2z"/>
                                     <constraint firstItem="s8z-Vd-XSF" firstAttribute="top" secondItem="rBF-yT-aTI" secondAttribute="top" constant="55" id="ka4-DT-TUY"/>
                                     <constraint firstItem="fRQ-CQ-fZf" firstAttribute="top" secondItem="rBF-yT-aTI" secondAttribute="top" constant="45" id="mgl-K2-Z7K"/>
                                     <constraint firstItem="49L-7g-qH9" firstAttribute="top" secondItem="fRQ-CQ-fZf" secondAttribute="bottom" constant="8" id="qHg-Py-WxR"/>
@@ -365,6 +377,26 @@
                                     <action selector="close:" destination="gC8-nK-1T8" eventType="touchUpInside" id="HdG-aW-YGx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgZ-jk-AWN">
+                                <rect key="frame" x="311" y="27" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="95x-Na-Q2L"/>
+                                    <constraint firstAttribute="height" constant="30" id="NPv-hd-Ev2"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="pencil.tip" catalog="system"/>
+                                <connections>
+                                    <action selector="highlight:" destination="gC8-nK-1T8" eventType="touchUpInside" id="PeG-zO-bm5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-hD-MLd">
+                                <rect key="frame" x="73" y="27" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="someShit:" destination="gC8-nK-1T8" eventType="touchUpInside" id="gaw-9z-Fdy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1215628311" green="0.12918630240000001" blue="0.141189754" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -376,8 +408,10 @@
                             <constraint firstAttribute="bottom" secondItem="hnB-g8-XcV" secondAttribute="bottom" id="Zzj-Be-dZq"/>
                             <constraint firstItem="nUI-Iu-Zid" firstAttribute="leading" secondItem="f33-4r-8rZ" secondAttribute="leading" constant="20" id="f6b-Oi-yeb"/>
                             <constraint firstItem="hnB-g8-XcV" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="83" id="fJ1-9R-9Fx"/>
+                            <constraint firstItem="9zi-Kq-kbD" firstAttribute="leading" secondItem="EgZ-jk-AWN" secondAttribute="trailing" constant="8" id="fUP-xN-b4s"/>
                             <constraint firstItem="nUI-Iu-Zid" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="20" id="ibR-ic-FiD"/>
                             <constraint firstItem="7Xu-ms-jG1" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="20" id="qak-ic-yal"/>
+                            <constraint firstItem="EgZ-jk-AWN" firstAttribute="top" secondItem="f33-4r-8rZ" secondAttribute="top" constant="27" id="reD-di-I0I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f33-4r-8rZ"/>
                     </view>
@@ -391,6 +425,78 @@
             </objects>
             <point key="canvasLocation" x="953.62318840579712" y="137.94642857142856"/>
         </scene>
+        <!--Ajustes-->
+        <scene sceneID="mLE-cf-0qx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0v3-p2-mpB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="y2S-Xc-UM9" customClass="settingsTableViewController" customModule="IIF_Documentos" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gyd-7f-wGS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="2UN-2k-xQK">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="Rbm-mm-wU8">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rbm-mm-wU8" id="cTe-ZF-PbO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr4-f6-9B6">
+                                                    <rect key="frame" x="20" y="11" width="243" height="58"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="243" id="3dB-kF-aeO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <state key="normal" title="Cerrar sesión">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="logOut:" destination="y2S-Xc-UM9" eventType="touchUpInside" id="rCe-FZ-DUd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xr4-f6-9B6" firstAttribute="leading" secondItem="cTe-ZF-PbO" secondAttribute="leadingMargin" id="Wk6-Ky-FkR"/>
+                                                <constraint firstItem="Xr4-f6-9B6" firstAttribute="bottom" secondItem="cTe-ZF-PbO" secondAttribute="bottomMargin" id="Xlx-N5-qo2"/>
+                                                <constraint firstItem="Xr4-f6-9B6" firstAttribute="top" secondItem="cTe-ZF-PbO" secondAttribute="topMargin" id="u8W-tN-8hC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="y2S-Xc-UM9" id="tmK-u9-H4d"/>
+                            <outlet property="delegate" destination="y2S-Xc-UM9" id="la3-y4-ndY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ajustes" id="ho0-Fe-sxg"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="682.60869565217399" y="834.375"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="oqd-ci-gkY">
+            <objects>
+                <navigationController storyboardIdentifier="bitches" id="fOd-TP-crL" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="lsd-aQ-otd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="y2S-Xc-UM9" kind="relationship" relationship="rootViewController" id="FP0-cR-Txa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRP-gw-moI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-235" y="835"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.left.circle" catalog="system" width="64" height="60"/>
@@ -399,6 +505,7 @@
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="loginBackground" width="1125" height="2436"/>
         <image name="mobile-banking-app-design-best-ui-patterns-1" width="750" height="480"/>
+        <image name="pencil.tip" catalog="system" width="48" height="64"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <namedColor name="Main Blue">
             <color red="0.035000000149011612" green="0.092000000178813934" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

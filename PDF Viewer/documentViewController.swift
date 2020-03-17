@@ -11,6 +11,7 @@ import PDFKit
 import Floaty
 
 class documentViewController: UIViewController, PDFDocumentDelegate {
+    var delegate: getOut?
     
     //MARK: Outlets
     
@@ -19,13 +20,11 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     var searchedItem: PDFSelection?
     var mainDocument: PDFDocument!
     var pdfdocument: PDFDocument?
-
     
     let documentName = UserDefaults.standard.value(forKey: "documentName") as! String
     
     @IBOutlet weak var documentViewer: PDFView!
     @IBOutlet weak var documentVisualAid: UIImageView!
-    @IBOutlet weak var search: UITextField!
     
     //MARK: viewDid
     
@@ -34,6 +33,8 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
         setupDocumentViewer()
         optionsButton()
+        
+        
         
     }
     
@@ -59,7 +60,7 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         floaty.plusColor = UIColor.white
         floaty.addItem("Buscar", icon: UIImage(named: "searchIcon")!, handler: { item in
             
-            self.searchBtnClick()
+            self.searchButtonClick()
             
             floaty.close()
         })
@@ -67,7 +68,7 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
     }
     
-    func searchBtnClick() {
+    func searchButtonClick() {
         let searchViewController = SearchTableViewController()
         searchViewController.pdfDocument = mainDocument
         searchViewController.delegate = self
@@ -76,30 +77,46 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         self.present(nav, animated: true, completion:nil)
     }
     
-    func documentDidEndDocumentFind(_ notification: Notification) {
-        print("Ended search")
-        documentViewer.setCurrentSelection(searchedItem, animate: true)
-    }
-    
-    func documentDidFindMatch(_ notification: Notification) {
-        print("foundMatch")
-        if let selection = notification.userInfo?.first?.value as? PDFSelection {
-            selection.color = .yellow
-            if searchedItem == nil {
-                print("Found shit")
-                // The first found item sets the object.
-                searchedItem = selection
-                documentViewer.go(to: selection.pages[0])
-                print(selection.pages)
-            }
-        }
-    }
-    
     //MARK: Buttons
     
     @IBAction func close(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func highlight(_ sender: Any) {
+        
+        guard let selections = documentViewer.currentSelection?.selectionsByLine()
+            else {
+        
+                let alert = UIAlertController(title: "Marcatexto", message: "Para usar el marcatexto primero selecciona el texto.", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                 
+                self.present(alert, animated: true)
+                
+                return
+                
+        }
+        
+        selections.forEach({ selection in
+            selection.pages.forEach({ page in
+                let highlight = PDFAnnotation(bounds: selection.bounds(for: page), forType: .highlight, withProperties: nil)
+                highlight.color = .yellow
+                page.addAnnotation(highlight)
+            })
+        })
+        
+        let path = Bundle.main.url(forResource: documentName, withExtension: "pdf")
+        
+        documentViewer.document?.write(to: path!)
+        
+    }
+    
+    @IBAction func someShit(_ sender: Any) {
+        
+        self.delegate?.logout2()
         
     }
     

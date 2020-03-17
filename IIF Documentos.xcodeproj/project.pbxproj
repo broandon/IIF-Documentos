@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A6EF0D6033279B515C7C239 /* Pods_IIF_Documentos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53B9596D1B45C39ED3B96B3 /* Pods_IIF_Documentos.framework */; };
+		9D0E94B724207939008F4A8E /* settingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E94B624207939008F4A8E /* settingsTableViewController.swift */; };
 		9D55E0F824108E53000B5818 /* extensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E0F724108E53000B5818 /* extensionsViewController.swift */; };
 		9D55E0FA241095DF000B5818 /* loadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */; };
 		9D55E0FD2410977C000B5818 /* loadingVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9D55E0FC2410977C000B5818 /* loadingVideo.mp4 */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		78B47B99672920E58F564A80 /* Pods-IIF Documentos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IIF Documentos.debug.xcconfig"; path = "Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos.debug.xcconfig"; sourceTree = "<group>"; };
 		7E9ED24895A687FCC64B0898 /* Pods-IIF Documentos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IIF Documentos.release.xcconfig"; path = "Target Support Files/Pods-IIF Documentos/Pods-IIF Documentos.release.xcconfig"; sourceTree = "<group>"; };
+		9D0E94B624207939008F4A8E /* settingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsTableViewController.swift; sourceTree = "<group>"; };
 		9D55E0F724108E53000B5818 /* extensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsViewController.swift; sourceTree = "<group>"; };
 		9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingScreenViewController.swift; sourceTree = "<group>"; };
 		9D55E0FC2410977C000B5818 /* loadingVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loadingVideo.mp4; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 				D53B9596D1B45C39ED3B96B3 /* Pods_IIF_Documentos.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D0E94B3242078BE008F4A8E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9D0E94B624207939008F4A8E /* settingsTableViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		9D55E0F624108E2C000B5818 /* Tools */ = {
@@ -131,6 +141,7 @@
 		CFCA1C0A241047B50016A6D8 = {
 			isa = PBXGroup;
 			children = (
+				9D0E94B3242078BE008F4A8E /* Settings */,
 				9D620932241E2FC70036B420 /* Search */,
 				9DE700D4241B58B400AB0636 /* PDF Viewer */,
 				9D6FB5CA2410B61B005F9719 /* Main */,
@@ -313,6 +324,7 @@
 				9D620935241E2FD70036B420 /* SearchViewCell.swift in Sources */,
 				9DE700D6241B58DC00AB0636 /* documentViewController.swift in Sources */,
 				9DE700D9241B622E00AB0636 /* documentsTableViewCell.swift in Sources */,
+				9D0E94B724207939008F4A8E /* settingsTableViewController.swift in Sources */,
 				9D55E0FA241095DF000B5818 /* loadingScreenViewController.swift in Sources */,
 				9D620938241E30140036B420 /* SearchTableViewController.swift in Sources */,
 				CFCA1C30241055440016A6D8 /* loginViewController.swift in Sources */,

@@ -12,5 +12,6 @@ target 'IIF Documentos' do
   pod 'Hero'
   pod 'LazyFadeInView'
   pod 'Floaty'
+  pod 'SideMenu'
   
 end
