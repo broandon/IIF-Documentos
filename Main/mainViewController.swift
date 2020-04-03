@@ -199,19 +199,14 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func sideMenuButton(_ sender: Any) {
         
         let menu = storyboard!.instantiateViewController(withIdentifier: "bitches") as! SideMenuNavigationController
-            
-        let vc = settingsTableViewController()
-        vc.delegate = self
-        present(vc, animated: true, completion: nil)
         
         menu.alwaysAnimate = true
         menu.blurEffectStyle = .prominent
         menu.leftSide = true
         menu.statusBarEndAlpha = 0
         menu.presentationStyle = .viewSlideOutMenuOut
-        
- //       present(menu, animated: true, completion: nil)
-        
+                
+        present(menu, animated: true, completion: nil)
     }
     
     

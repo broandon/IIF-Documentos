@@ -9,28 +9,27 @@
 import UIKit
 
 class settingsTableViewController: UITableViewController {
+    
+    //MARK: Outlets
+    
     var delegate: getOut?
+    
+    //MARK: viewDid
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
     }
-
+    
+    //MARK: Buttons
+    
     @IBAction func logOut(_ sender: Any) {
         
-        print("called")
+        print("Pressed Log Out")
         self.delegate?.logout2()
         
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-
-
 }
+
+//MARK: Extensions

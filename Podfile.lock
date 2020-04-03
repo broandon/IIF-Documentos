@@ -3,7 +3,7 @@ PODS:
   - Hero (1.5.0)
   - IQKeyboardManager (6.5.5)
   - LazyFadeInView (1.0.0)
-  - SideMenu (6.4.7)
+  - SideMenu (6.4.8)
   - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
@@ -28,9 +28,9 @@ SPEC CHECKSUMS:
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   LazyFadeInView: 442c59c427f865754c380b600cc3ac0d750f046a
-  SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
+  SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
 PODFILE CHECKSUM: 07f69a7bb8e3cbca61099fef2d917cfde47f1686
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.1
