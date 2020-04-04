@@ -16,6 +16,7 @@
 		9D620936241E2FD70036B420 /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D620934241E2FD70036B420 /* SearchViewCell.xib */; };
 		9D620938241E30140036B420 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D620937241E30140036B420 /* SearchTableViewController.swift */; };
 		9D6FB5CC2410B62D005F9719 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FB5CB2410B62D005F9719 /* mainViewController.swift */; };
+		9D8E4B0424383787006430CF /* bookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E4B0324383787006430CF /* bookmarksModel.swift */; };
 		9DE700D6241B58DC00AB0636 /* documentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE700D5241B58DC00AB0636 /* documentViewController.swift */; };
 		9DE700D9241B622E00AB0636 /* documentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE700D7241B622E00AB0636 /* documentsTableViewCell.swift */; };
 		9DE700DA241B622E00AB0636 /* documentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE700D8241B622E00AB0636 /* documentsTableViewCell.xib */; };
@@ -43,6 +44,7 @@
 		9D620934241E2FD70036B420 /* SearchViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
 		9D620937241E30140036B420 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		9D6FB5CB2410B62D005F9719 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		9D8E4B0324383787006430CF /* bookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookmarksModel.swift; sourceTree = "<group>"; };
 		9DE700D5241B58DC00AB0636 /* documentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentViewController.swift; sourceTree = "<group>"; };
 		9DE700D7241B622E00AB0636 /* documentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentsTableViewCell.swift; sourceTree = "<group>"; };
 		9DE700D8241B622E00AB0636 /* documentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = documentsTableViewCell.xib; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		9D8E4B022438373D006430CF /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E4B0324383787006430CF /* bookmarksModel.swift */,
+			);
+			path = Bookmarks;
+			sourceTree = "<group>";
+		};
 		9DE700D4241B58B400AB0636 /* PDF Viewer */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		CFCA1C0A241047B50016A6D8 = {
 			isa = PBXGroup;
 			children = (
+				9D8E4B022438373D006430CF /* Bookmarks */,
 				9D0E94B3242078BE008F4A8E /* Settings */,
 				9D620932241E2FC70036B420 /* Search */,
 				9DE700D4241B58B400AB0636 /* PDF Viewer */,
@@ -327,6 +338,7 @@
 				9D0E94B724207939008F4A8E /* settingsTableViewController.swift in Sources */,
 				9D55E0FA241095DF000B5818 /* loadingScreenViewController.swift in Sources */,
 				9D620938241E30140036B420 /* SearchTableViewController.swift in Sources */,
+				9D8E4B0424383787006430CF /* bookmarksModel.swift in Sources */,
 				CFCA1C30241055440016A6D8 /* loginViewController.swift in Sources */,
 				9D6FB5CC2410B62D005F9719 /* mainViewController.swift in Sources */,
 			);
@@ -481,7 +493,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "broandonDevelops.IIF-Documentos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.broandonDevelops.IIF-Documentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -501,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "broandonDevelops.IIF-Documentos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.broandonDevelops.IIF-Documentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

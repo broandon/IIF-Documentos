@@ -151,6 +151,8 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         nameLabel.slideInFromTop()
         profileImage.slideInFromRight()
         settingsImage.slideInFromLeft()
+        topImagePlaceholder.slideInFromBottom()
+        tableView.slideInFromBottom()
         
     }
     
@@ -185,16 +187,6 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: Buttons
     
-    @IBAction func logout(_ sender: Any) {
-        
-        UserDefaults.standard.set(false, forKey: "loggedIn")
-        self.hero.isEnabled = true
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
-        newViewController.hero.modalAnimationType = .autoReverse(presenting: .pageOut(direction: .right))
-        self.hero.replaceViewController(with: newViewController)
-        
-    }
     
     @IBAction func sideMenuButton(_ sender: Any) {
         

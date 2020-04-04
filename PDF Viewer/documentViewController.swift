@@ -34,11 +34,27 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         setupDocumentViewer()
         optionsButton()
         
-        
+        addCustomMenu()
         
     }
     
     //MARK: Funcs
+    
+    func addCustomMenu() {
+        
+        let printThisToConsole = UIMenuItem(title: "Añadir Bookmark", action: #selector(printToConsole))
+        
+        UIMenuController.shared.menuItems = [printThisToConsole]
+        
+    }
+    
+    @objc func printToConsole() {
+        
+        let currentTextAndPage = "The selection is: \(documentViewer.currentSelection?.string ?? "") and the page is: \(mainDocument.index(for: documentViewer.currentPage!))"
+        
+        print(currentTextAndPage)
+        
+    }
     
     func setupDocumentViewer() {
         
@@ -50,6 +66,7 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         documentViewer.autoScales = true
         
         documentVisualAid.image = image
+        
         
     }
     
@@ -89,11 +106,11 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
         guard let selections = documentViewer.currentSelection?.selectionsByLine()
             else {
-        
+                
                 let alert = UIAlertController(title: "Marcatexto", message: "Para usar el marcatexto primero selecciona el texto.", preferredStyle: .alert)
-
+                
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                 
+                
                 self.present(alert, animated: true)
                 
                 return
@@ -114,12 +131,6 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
     }
     
-    @IBAction func someShit(_ sender: Any) {
-        
-        self.delegate?.logout2()
-        
-    }
-    
 }
 
 //MARK: Extensions
@@ -130,4 +141,25 @@ extension documentViewController: SearchTableViewControllerDelegate {
         documentViewer.currentSelection = selection
         documentViewer.go(to: selection)
     }
+}
+
+extension PDFView{
+    
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        
+        if action == Selector(("_lookup:")) ||
+            action == Selector(("_define:")) {
+            
+            return false
+            
+        }
+        
+        if action == #selector(copy(_:)) {
+            
+            return true
+            
+        }
+        return false
+    }
+    
 }

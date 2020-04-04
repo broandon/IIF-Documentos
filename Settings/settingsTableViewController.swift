@@ -12,8 +12,6 @@ class settingsTableViewController: UITableViewController {
     
     //MARK: Outlets
     
-    var delegate: getOut?
-    
     //MARK: viewDid
     
     override func viewDidLoad() {
@@ -25,8 +23,14 @@ class settingsTableViewController: UITableViewController {
     
     @IBAction func logOut(_ sender: Any) {
         
-        print("Pressed Log Out")
-        self.delegate?.logout2()
+        UserDefaults.standard.set(false, forKey: "loggedIn")
+        
+        guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as? loginViewController else {
+            return
+        }
+        
+        UIApplication.shared.windows.first?.rootViewController = rootVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
         
     }
     

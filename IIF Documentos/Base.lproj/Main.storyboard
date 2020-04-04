@@ -257,7 +257,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ei-HR-wtW">
                                 <rect key="frame" x="1" y="127" width="412" height="769"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobile-banking-app-design-best-ui-patterns-1" translatesAutoresizingMaskIntoConstraints="NO" id="DZD-hO-8he">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tusMarcadores" translatesAutoresizingMaskIntoConstraints="NO" id="DZD-hO-8he">
                                         <rect key="frame" x="20" y="35" width="372" height="218.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="DZD-hO-8he" secondAttribute="height" multiplier="356:209" id="UtT-gJ-aym"/>
@@ -268,16 +268,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOT-VS-D98">
-                                        <rect key="frame" x="141" y="119" width="130" height="72"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="HOT-VS-D98" secondAttribute="height" multiplier="132:73" id="gLP-4f-Sk7"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yvy-qA-E0q"/>
-                                        </connections>
-                                    </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="log-vt-Fq8">
                                         <rect key="frame" x="20" y="288.5" width="372" height="459.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -288,13 +278,10 @@
                                     <constraint firstItem="DZD-hO-8he" firstAttribute="top" secondItem="4ei-HR-wtW" secondAttribute="top" constant="35" id="3LM-Pl-l3i"/>
                                     <constraint firstItem="DZD-hO-8he" firstAttribute="leading" secondItem="4ei-HR-wtW" secondAttribute="leading" constant="20" id="5FC-7D-Bay"/>
                                     <constraint firstAttribute="trailing" secondItem="log-vt-Fq8" secondAttribute="trailing" constant="20" id="AY4-E3-cbX"/>
-                                    <constraint firstAttribute="trailing" secondItem="HOT-VS-D98" secondAttribute="trailing" constant="141" id="Ck3-1J-tZr"/>
                                     <constraint firstAttribute="bottom" secondItem="log-vt-Fq8" secondAttribute="bottom" constant="21" id="LIB-MI-4QW"/>
                                     <constraint firstAttribute="trailing" secondItem="DZD-hO-8he" secondAttribute="trailing" constant="20" id="NaV-RW-uyX"/>
-                                    <constraint firstItem="HOT-VS-D98" firstAttribute="top" secondItem="4ei-HR-wtW" secondAttribute="top" constant="119" id="YXL-qE-DRK"/>
                                     <constraint firstItem="log-vt-Fq8" firstAttribute="leading" secondItem="4ei-HR-wtW" secondAttribute="leading" constant="20" id="fUV-Lv-013"/>
                                     <constraint firstItem="log-vt-Fq8" firstAttribute="top" secondItem="DZD-hO-8he" secondAttribute="bottom" constant="35" id="na8-DR-7BS"/>
-                                    <constraint firstItem="HOT-VS-D98" firstAttribute="leading" secondItem="4ei-HR-wtW" secondAttribute="leading" constant="141" id="sPV-Wc-tvg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -387,14 +374,6 @@
                                 <state key="normal" image="pencil.tip" catalog="system"/>
                                 <connections>
                                     <action selector="highlight:" destination="gC8-nK-1T8" eventType="touchUpInside" id="PeG-zO-bm5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-hD-MLd">
-                                <rect key="frame" x="73" y="27" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="someShit:" destination="gC8-nK-1T8" eventType="touchUpInside" id="gaw-9z-Fdy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -504,9 +483,9 @@
         <image name="eyeglasses" catalog="system" width="128" height="54"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="loginBackground" width="1125" height="2436"/>
-        <image name="mobile-banking-app-design-best-ui-patterns-1" width="750" height="480"/>
         <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
+        <image name="tusMarcadores" width="750" height="480"/>
         <namedColor name="Main Blue">
             <color red="0.035000000149011612" green="0.092000000178813934" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
