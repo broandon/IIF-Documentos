@@ -15,6 +15,10 @@ protocol SearchTableViewControllerDelegate: class {
     func searchTableViewController(_ searchTableViewController: SearchTableViewController, didSelectSerchResult selection: PDFSelection)
 }
 
+protocol bookmarksViewControllerDelegate: class {
+    func searchTableViewController(_ searchTableViewController: bookmarksViewController, didSelectSerchResult selection: PDFSelection)
+}
+
 class SearchTableViewController: UITableViewController {
     open var pdfDocument: PDFDocument?
     weak var delegate: SearchTableViewControllerDelegate?

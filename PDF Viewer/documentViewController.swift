@@ -22,7 +22,7 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     var pdfdocument: PDFDocument?
     var name: String?
     
-    var theMainDic = UserDefaults.standard.value(forKey: "MainDic") as! [[String:Any]]
+    var theMainDic = UserDefaults.standard.value(forKey: "MainDic")
     
     let documentName = UserDefaults.standard.value(forKey: "documentName") as? String
         
@@ -51,6 +51,62 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     }
     
     @objc func printToConsole() {
+        
+        if theMainDic == nil {
+            
+            print("This shit don't exist.")
+            print(theMainDic)
+            
+            let dicValue : [[String:Any]] = []
+            
+            UserDefaults.standard.set(dicValue, forKey: "MainDic")
+            
+            print("Here we create it and give it an empty existence")
+            print(theMainDic)
+            
+            theMainDic =  UserDefaults.standard.value(forKey: "MainDic")
+            
+            print("Here we update it, i guess, idk")
+            print(theMainDic)
+            
+            var dic = theMainDic as! [[String:Any]]
+            
+            let date = Date()
+                    
+            let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)"] as [String:Any]
+            
+            dic.append(newBookmark)
+            
+            print("Here it should appear with the appended shit")
+            print(dic)
+                            
+            let savedBookmarks = dic
+            
+            UserDefaults.standard.set(savedBookmarks, forKey: "MainDic")
+            if let loadedTasks = UserDefaults.standard.array(forKey: "MainDic") as? [[String: Any]] {
+                print(loadedTasks)
+            }
+            
+            let alert = UIAlertController(title: "Nuevo marcador", message: "Tu nuevo marcador ha sido guardado con exito. ¿Quieres continuar aqui o ir a tus marcadores?", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ir a Marcadores", style: .default, handler: { action in
+                
+                let myViewController = bookmarksViewController(nibName: "bookmarksViewController", bundle: nil)
+                self.present(myViewController, animated: true, completion: nil)
+                
+            }))
+
+            self.present(alert, animated: true)
+                    
+            
+            return
+            
+        }
+        
+        print("The dic exists")
+        
+        var dic = theMainDic as! [[String:Any]]
                         
         let currentTextAndPage = "The selection is: \(documentViewer.currentSelection?.string ?? "") and the page is: \(mainDocument.index(for: documentViewer.currentPage!))"
         
@@ -58,9 +114,9 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
                 
         let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)"] as [String:Any]
         
-        theMainDic.append(newBookmark)
+        dic.append(newBookmark)
                         
-        let savedBookmarks = theMainDic
+        let savedBookmarks = dic
         
         UserDefaults.standard.set(savedBookmarks, forKey: "MainDic")
         if let loadedTasks = UserDefaults.standard.array(forKey: "MainDic") as? [[String: Any]] {

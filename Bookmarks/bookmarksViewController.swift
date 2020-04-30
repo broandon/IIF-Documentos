@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PDFKit
 
 struct myDictionary {
     static var Bookmarks : [Any] = []
@@ -19,6 +20,8 @@ class bookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
     let reuseDocument = "DocumentCell"
     
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var delegate: bookmarksViewControllerDelegate?
     
     let theMainDic = UserDefaults.standard.value(forKey: "MainDic")
     
@@ -34,26 +37,7 @@ class bookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        updateTableContentInset()
-        
-    }
-    
     //MARK: Funcs
-    
-    func updateTableContentInset() {
-        let numRows = self.tableView.numberOfRows(inSection: 0)
-        var contentInsetTop = self.tableView.bounds.size.height
-        for i in 0..<numRows {
-            let rowRect = self.tableView.rectForRow(at: IndexPath(item: i, section: 0))
-            contentInsetTop -= rowRect.size.height
-            if contentInsetTop <= 0 {
-                contentInsetTop = 0
-            }
-        }
-        self.tableView.contentInset = UIEdgeInsets(top: contentInsetTop,left: 0,bottom: 0,right: 0)
-    }
     
     func checkDataSource() {
         
@@ -81,12 +65,25 @@ class bookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let document = dictionary[indexPath.row]
+        
+        let text = document["Texto"] as! PDFSelection
+        
+        let selection = text
+        
+        delegate?.searchTableViewController(self, didSelectSerchResult: selection)
+        dismiss(animated: false, completion: nil)
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dictionary.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseDocument, for: indexPath) as! TableViewCell
         
         dictionary.sort { ($0["Date"] as! String) > ($1["Date"] as! String) }
