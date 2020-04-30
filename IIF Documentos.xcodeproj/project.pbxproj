@@ -16,7 +16,10 @@
 		9D620936241E2FD70036B420 /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D620934241E2FD70036B420 /* SearchViewCell.xib */; };
 		9D620938241E30140036B420 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D620937241E30140036B420 /* SearchTableViewController.swift */; };
 		9D6FB5CC2410B62D005F9719 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FB5CB2410B62D005F9719 /* mainViewController.swift */; };
-		9D8E4B0424383787006430CF /* bookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E4B0324383787006430CF /* bookmarksModel.swift */; };
+		9DD519732459E76C00205C91 /* bookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD519712459E76C00205C91 /* bookmarksViewController.swift */; };
+		9DD519742459E76C00205C91 /* bookmarksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD519722459E76C00205C91 /* bookmarksViewController.xib */; };
+		9DD519772459EBAF00205C91 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD519752459EBAF00205C91 /* TableViewCell.swift */; };
+		9DD519782459EBAF00205C91 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD519762459EBAF00205C91 /* TableViewCell.xib */; };
 		9DE700D6241B58DC00AB0636 /* documentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE700D5241B58DC00AB0636 /* documentViewController.swift */; };
 		9DE700D9241B622E00AB0636 /* documentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE700D7241B622E00AB0636 /* documentsTableViewCell.swift */; };
 		9DE700DA241B622E00AB0636 /* documentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE700D8241B622E00AB0636 /* documentsTableViewCell.xib */; };
@@ -44,7 +47,10 @@
 		9D620934241E2FD70036B420 /* SearchViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
 		9D620937241E30140036B420 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		9D6FB5CB2410B62D005F9719 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
-		9D8E4B0324383787006430CF /* bookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookmarksModel.swift; sourceTree = "<group>"; };
+		9DD519712459E76C00205C91 /* bookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookmarksViewController.swift; sourceTree = "<group>"; };
+		9DD519722459E76C00205C91 /* bookmarksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = bookmarksViewController.xib; sourceTree = "<group>"; };
+		9DD519752459EBAF00205C91 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		9DD519762459EBAF00205C91 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		9DE700D5241B58DC00AB0636 /* documentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentViewController.swift; sourceTree = "<group>"; };
 		9DE700D7241B622E00AB0636 /* documentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentsTableViewCell.swift; sourceTree = "<group>"; };
 		9DE700D8241B622E00AB0636 /* documentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = documentsTableViewCell.xib; sourceTree = "<group>"; };
@@ -123,7 +129,10 @@
 		9D8E4B022438373D006430CF /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
-				9D8E4B0324383787006430CF /* bookmarksModel.swift */,
+				9DD519712459E76C00205C91 /* bookmarksViewController.swift */,
+				9DD519722459E76C00205C91 /* bookmarksViewController.xib */,
+				9DD519752459EBAF00205C91 /* TableViewCell.swift */,
+				9DD519762459EBAF00205C91 /* TableViewCell.xib */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -270,6 +279,8 @@
 				CFEFA6CF241C3B9000DF73C5 /* CPF.pdf in Resources */,
 				9DE700DA241B622E00AB0636 /* documentsTableViewCell.xib in Resources */,
 				9D620936241E2FD70036B420 /* SearchViewCell.xib in Resources */,
+				9DD519782459EBAF00205C91 /* TableViewCell.xib in Resources */,
+				9DD519742459E76C00205C91 /* bookmarksViewController.xib in Resources */,
 				CF51D73124184F74002CD70A /* CNPP.pdf in Resources */,
 				9D55E0FD2410977C000B5818 /* loadingVideo.mp4 in Resources */,
 				CFCA1C23241047B80016A6D8 /* LaunchScreen.storyboard in Resources */,
@@ -329,6 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD519772459EBAF00205C91 /* TableViewCell.swift in Sources */,
+				9DD519732459E76C00205C91 /* bookmarksViewController.swift in Sources */,
 				9D55E0F824108E53000B5818 /* extensionsViewController.swift in Sources */,
 				CFCA1C17241047B50016A6D8 /* AppDelegate.swift in Sources */,
 				CFCA1C19241047B50016A6D8 /* SceneDelegate.swift in Sources */,
@@ -338,7 +351,6 @@
 				9D0E94B724207939008F4A8E /* settingsTableViewController.swift in Sources */,
 				9D55E0FA241095DF000B5818 /* loadingScreenViewController.swift in Sources */,
 				9D620938241E30140036B420 /* SearchTableViewController.swift in Sources */,
-				9D8E4B0424383787006430CF /* bookmarksModel.swift in Sources */,
 				CFCA1C30241055440016A6D8 /* loginViewController.swift in Sources */,
 				9D6FB5CC2410B62D005F9719 /* mainViewController.swift in Sources */,
 			);

@@ -20,9 +20,12 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     var searchedItem: PDFSelection?
     var mainDocument: PDFDocument!
     var pdfdocument: PDFDocument?
+    var name: String?
     
-    let documentName = UserDefaults.standard.value(forKey: "documentName") as! String
+    var theMainDic = UserDefaults.standard.value(forKey: "MainDic") as! [[String:Any]]
     
+    let documentName = UserDefaults.standard.value(forKey: "documentName") as? String
+        
     @IBOutlet weak var documentViewer: PDFView!
     @IBOutlet weak var documentVisualAid: UIImageView!
     
@@ -33,7 +36,6 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
         setupDocumentViewer()
         optionsButton()
-        
         addCustomMenu()
         
     }
@@ -49,11 +51,34 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     }
     
     @objc func printToConsole() {
-        
+                        
         let currentTextAndPage = "The selection is: \(documentViewer.currentSelection?.string ?? "") and the page is: \(mainDocument.index(for: documentViewer.currentPage!))"
         
-        print(currentTextAndPage)
+        let date = Date()
+                
+        let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)"] as [String:Any]
         
+        theMainDic.append(newBookmark)
+                        
+        let savedBookmarks = theMainDic
+        
+        UserDefaults.standard.set(savedBookmarks, forKey: "MainDic")
+        if let loadedTasks = UserDefaults.standard.array(forKey: "MainDic") as? [[String: Any]] {
+            print(loadedTasks)
+        }
+        
+        let alert = UIAlertController(title: "Nuevo marcador", message: "Tu nuevo marcador ha sido guardado con exito. ¿Quieres continuar aqui o ir a tus marcadores?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ir a Marcadores", style: .default, handler: { action in
+            
+            let myViewController = bookmarksViewController(nibName: "bookmarksViewController", bundle: nil)
+            self.present(myViewController, animated: true, completion: nil)
+            
+        }))
+
+        self.present(alert, animated: true)
+                
     }
     
     func setupDocumentViewer() {

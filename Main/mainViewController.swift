@@ -15,8 +15,9 @@ protocol getOut {
     
 }
 
-class mainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, getOut {
 
+class mainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, getOut {
+    
     //MARK: Outlets
     
     @IBOutlet weak var blackView: UIView!
@@ -96,16 +97,18 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let documentName = pickedDocument["PDFNAme"] as! String
         let documentImage = pickedDocument["Imagen"] as! UIImage
-                
+        let Name = pickedDocument["Nombre"] as! String
+        
         defaults.set(documentName, forKey: "documentName")
-                
+        
         self.hero.isEnabled = true
-                
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "documentViewController") as! documentViewController
         newViewController.image = documentImage
         newViewController.isModalInPresentation = true
         newViewController.delegate = self
+        newViewController.name = Name
         present(newViewController, animated: true, completion: {
             
             print("Here")
@@ -127,7 +130,7 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.hero.replaceViewController(with: newViewController)
         
     }
-
+    
     
     private func configureTable() {
         
@@ -197,10 +200,16 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menu.leftSide = true
         menu.statusBarEndAlpha = 0
         menu.presentationStyle = .viewSlideOutMenuOut
-                
+        
         present(menu, animated: true, completion: nil)
     }
     
+    @IBAction func bookmarksButton(_ sender: Any) {
+        
+        let myViewController = bookmarksViewController(nibName: "bookmarksViewController", bundle: nil)
+        present(myViewController, animated: true, completion: nil)
+        
+    }
     
 }
 

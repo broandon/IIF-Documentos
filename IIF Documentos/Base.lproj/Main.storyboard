@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5d1-zr-wGO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -196,8 +196,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s8z-Vd-XSF">
-                                        <rect key="frame" x="344" y="56" width="45" height="42.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coloresTransparente" translatesAutoresizingMaskIntoConstraints="NO" id="s8z-Vd-XSF">
+                                        <rect key="frame" x="344" y="55" width="45" height="45"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="l5w-KC-WXh"/>
@@ -272,14 +272,24 @@
                                         <rect key="frame" x="20" y="288.5" width="372" height="459.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7P-2K-oQ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="288.5"/>
+                                        <connections>
+                                            <action selector="bookmarksButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wC2-05-O2M"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="DZD-hO-8he" firstAttribute="top" secondItem="4ei-HR-wtW" secondAttribute="top" constant="35" id="3LM-Pl-l3i"/>
                                     <constraint firstItem="DZD-hO-8he" firstAttribute="leading" secondItem="4ei-HR-wtW" secondAttribute="leading" constant="20" id="5FC-7D-Bay"/>
+                                    <constraint firstAttribute="trailing" secondItem="s7P-2K-oQ9" secondAttribute="trailing" id="87t-GO-Q8N"/>
                                     <constraint firstAttribute="trailing" secondItem="log-vt-Fq8" secondAttribute="trailing" constant="20" id="AY4-E3-cbX"/>
+                                    <constraint firstItem="s7P-2K-oQ9" firstAttribute="top" secondItem="4ei-HR-wtW" secondAttribute="top" id="Acm-ry-hfE"/>
                                     <constraint firstAttribute="bottom" secondItem="log-vt-Fq8" secondAttribute="bottom" constant="21" id="LIB-MI-4QW"/>
                                     <constraint firstAttribute="trailing" secondItem="DZD-hO-8he" secondAttribute="trailing" constant="20" id="NaV-RW-uyX"/>
+                                    <constraint firstItem="log-vt-Fq8" firstAttribute="top" secondItem="s7P-2K-oQ9" secondAttribute="bottom" id="UsO-q6-BcG"/>
+                                    <constraint firstItem="s7P-2K-oQ9" firstAttribute="leading" secondItem="4ei-HR-wtW" secondAttribute="leading" id="d8a-OK-1lP"/>
                                     <constraint firstItem="log-vt-Fq8" firstAttribute="leading" secondItem="4ei-HR-wtW" secondAttribute="leading" constant="20" id="fUV-Lv-013"/>
                                     <constraint firstItem="log-vt-Fq8" firstAttribute="top" secondItem="DZD-hO-8he" secondAttribute="bottom" constant="35" id="na8-DR-7BS"/>
                                 </constraints>
@@ -429,7 +439,7 @@
                                                         <constraint firstAttribute="width" constant="243" id="3dB-kF-aeO"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                    <state key="normal" title="Cerrar sesión">
+                                                    <state key="normal" title="Reiniciar app">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>

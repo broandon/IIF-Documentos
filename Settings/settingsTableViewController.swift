@@ -25,6 +25,9 @@ class settingsTableViewController: UITableViewController {
         
         UserDefaults.standard.set(false, forKey: "loggedIn")
         
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        UserDefaults.standard.synchronize()
+        
         guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as? loginViewController else {
             return
         }
