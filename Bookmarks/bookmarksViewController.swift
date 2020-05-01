@@ -66,20 +66,30 @@ class bookmarksViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+//
+//        let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)", "Pagina":"\(mainDocument.index(for: documentViewer.currentPage!))", "Image":"\(image!)"] as [String:Any]
+//
         let document = dictionary[indexPath.row]
         
-        let text = document["Texto"] as! PDFSelection
+        let title = document["Title"]
+        let text = document["Texto"]
+        let page = document["Pagina"]
+        let pdfName = document["PDF"]
         
-        let selection = text
+        let myViewController = bookMarkDetailViewController(nibName: "bookMarkDetailViewController", bundle: nil)
+        myViewController.fillDocumentName = title as! String
+        myViewController.fillText = text as! String
+        myViewController.fillPage = "\(page!)"
+        myViewController.PDFName = pdfName as! String
         
-        delegate?.searchTableViewController(self, didSelectSerchResult: selection)
-        dismiss(animated: false, completion: nil)
-        
+        present(myViewController, animated: true, completion: nil)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         dictionary.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

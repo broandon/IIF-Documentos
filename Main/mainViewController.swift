@@ -9,14 +9,7 @@
 import UIKit
 import SideMenu
 
-protocol getOut {
-    
-    func logout2()
-    
-}
-
-
-class mainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, getOut {
+class mainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //MARK: Outlets
     
@@ -101,14 +94,15 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         defaults.set(documentName, forKey: "documentName")
         
+        
         self.hero.isEnabled = true
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "documentViewController") as! documentViewController
         newViewController.image = documentImage
         newViewController.isModalInPresentation = true
-        newViewController.delegate = self
         newViewController.name = Name
+        newViewController.pdfName = documentName
         present(newViewController, animated: true, completion: {
             
             print("Here")
@@ -130,7 +124,6 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.hero.replaceViewController(with: newViewController)
         
     }
-    
     
     private func configureTable() {
         

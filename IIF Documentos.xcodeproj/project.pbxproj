@@ -12,6 +12,8 @@
 		9D55E0F824108E53000B5818 /* extensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E0F724108E53000B5818 /* extensionsViewController.swift */; };
 		9D55E0FA241095DF000B5818 /* loadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */; };
 		9D55E0FD2410977C000B5818 /* loadingVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9D55E0FC2410977C000B5818 /* loadingVideo.mp4 */; };
+		9D580CDB245CA3B200C2D648 /* bookMarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D580CD9245CA3B200C2D648 /* bookMarkDetailViewController.swift */; };
+		9D580CDC245CA3B200C2D648 /* bookMarkDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D580CDA245CA3B200C2D648 /* bookMarkDetailViewController.xib */; };
 		9D620935241E2FD70036B420 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D620933241E2FD70036B420 /* SearchViewCell.swift */; };
 		9D620936241E2FD70036B420 /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D620934241E2FD70036B420 /* SearchViewCell.xib */; };
 		9D620938241E30140036B420 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D620937241E30140036B420 /* SearchTableViewController.swift */; };
@@ -43,6 +45,8 @@
 		9D55E0F724108E53000B5818 /* extensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsViewController.swift; sourceTree = "<group>"; };
 		9D55E0F9241095DF000B5818 /* loadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingScreenViewController.swift; sourceTree = "<group>"; };
 		9D55E0FC2410977C000B5818 /* loadingVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loadingVideo.mp4; sourceTree = "<group>"; };
+		9D580CD9245CA3B200C2D648 /* bookMarkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookMarkDetailViewController.swift; sourceTree = "<group>"; };
+		9D580CDA245CA3B200C2D648 /* bookMarkDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = bookMarkDetailViewController.xib; sourceTree = "<group>"; };
 		9D620933241E2FD70036B420 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		9D620934241E2FD70036B420 /* SearchViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
 		9D620937241E30140036B420 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		9D580CD4245CA34E00C2D648 /* Bookmark Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9D580CD9245CA3B200C2D648 /* bookMarkDetailViewController.swift */,
+				9D580CDA245CA3B200C2D648 /* bookMarkDetailViewController.xib */,
+			);
+			path = "Bookmark Detail";
+			sourceTree = "<group>";
+		};
 		9D620932241E2FC70036B420 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +173,7 @@
 		CFCA1C0A241047B50016A6D8 = {
 			isa = PBXGroup;
 			children = (
+				9D580CD4245CA34E00C2D648 /* Bookmark Detail */,
 				9D8E4B022438373D006430CF /* Bookmarks */,
 				9D0E94B3242078BE008F4A8E /* Settings */,
 				9D620932241E2FC70036B420 /* Search */,
@@ -279,6 +293,7 @@
 				CFEFA6CF241C3B9000DF73C5 /* CPF.pdf in Resources */,
 				9DE700DA241B622E00AB0636 /* documentsTableViewCell.xib in Resources */,
 				9D620936241E2FD70036B420 /* SearchViewCell.xib in Resources */,
+				9D580CDC245CA3B200C2D648 /* bookMarkDetailViewController.xib in Resources */,
 				9DD519782459EBAF00205C91 /* TableViewCell.xib in Resources */,
 				9DD519742459E76C00205C91 /* bookmarksViewController.xib in Resources */,
 				CF51D73124184F74002CD70A /* CNPP.pdf in Resources */,
@@ -345,6 +360,7 @@
 				9D55E0F824108E53000B5818 /* extensionsViewController.swift in Sources */,
 				CFCA1C17241047B50016A6D8 /* AppDelegate.swift in Sources */,
 				CFCA1C19241047B50016A6D8 /* SceneDelegate.swift in Sources */,
+				9D580CDB245CA3B200C2D648 /* bookMarkDetailViewController.swift in Sources */,
 				9D620935241E2FD70036B420 /* SearchViewCell.swift in Sources */,
 				9DE700D6241B58DC00AB0636 /* documentViewController.swift in Sources */,
 				9DE700D9241B622E00AB0636 /* documentsTableViewCell.swift in Sources */,
@@ -505,7 +521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.broandonDevelops.IIF-Documentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -526,7 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.broandonDevelops.IIF-Documentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

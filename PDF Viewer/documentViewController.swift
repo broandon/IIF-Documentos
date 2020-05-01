@@ -11,7 +11,6 @@ import PDFKit
 import Floaty
 
 class documentViewController: UIViewController, PDFDocumentDelegate {
-    var delegate: getOut?
     
     //MARK: Outlets
     
@@ -21,11 +20,15 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
     var mainDocument: PDFDocument!
     var pdfdocument: PDFDocument?
     var name: String?
+    var pdfName: String?
+    var imageFromBookmarks : UIImage?
+    var currentPage = 0
+    var fillpage: String?
     
     var theMainDic = UserDefaults.standard.value(forKey: "MainDic")
     
     let documentName = UserDefaults.standard.value(forKey: "documentName") as? String
-        
+    
     @IBOutlet weak var documentViewer: PDFView!
     @IBOutlet weak var documentVisualAid: UIImageView!
     
@@ -36,7 +39,25 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
         setupDocumentViewer()
         optionsButton()
-        addCustomMenu()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.bool(forKey: "sentFromBookmarks") == true {
+            
+             UserDefaults.standard.set(false, forKey: "sentFromBookmarks")
+            
+            let pageToGo = Int(fillpage!)
+            
+            let validPageIndex: Int = currentPage + pageToGo!
+            guard let targetPage = documentViewer.document!.page(at: validPageIndex) else { return }
+            print(targetPage.index)
+            currentPage = currentPage - pageToGo!
+            documentViewer.go(to: targetPage)
+                
+         }
+    
         
     }
     
@@ -54,32 +75,20 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
         if theMainDic == nil {
             
-            print("This shit don't exist.")
-            print(theMainDic)
-            
             let dicValue : [[String:Any]] = []
             
             UserDefaults.standard.set(dicValue, forKey: "MainDic")
             
-            print("Here we create it and give it an empty existence")
-            print(theMainDic)
-            
             theMainDic =  UserDefaults.standard.value(forKey: "MainDic")
-            
-            print("Here we update it, i guess, idk")
-            print(theMainDic)
             
             var dic = theMainDic as! [[String:Any]]
             
             let date = Date()
-                    
-            let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)"] as [String:Any]
+            
+            let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)", "Pagina":"\(mainDocument.index(for: documentViewer.currentPage!))", "Image": documentName!, "PDF":pdfName] as [String:Any]
             
             dic.append(newBookmark)
             
-            print("Here it should appear with the appended shit")
-            print(dic)
-                            
             let savedBookmarks = dic
             
             UserDefaults.standard.set(savedBookmarks, forKey: "MainDic")
@@ -88,7 +97,7 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
             }
             
             let alert = UIAlertController(title: "Nuevo marcador", message: "Tu nuevo marcador ha sido guardado con exito. ¿Quieres continuar aqui o ir a tus marcadores?", preferredStyle: .alert)
-
+            
             alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "Ir a Marcadores", style: .default, handler: { action in
                 
@@ -96,26 +105,23 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
                 self.present(myViewController, animated: true, completion: nil)
                 
             }))
-
+            
             self.present(alert, animated: true)
-                    
             
             return
             
         }
         
-        print("The dic exists")
-        
         var dic = theMainDic as! [[String:Any]]
-                        
+        
         let currentTextAndPage = "The selection is: \(documentViewer.currentSelection?.string ?? "") and the page is: \(mainDocument.index(for: documentViewer.currentPage!))"
         
         let date = Date()
-                
-        let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)"] as [String:Any]
+        
+        let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)", "Pagina":"\(mainDocument.index(for: documentViewer.currentPage!))", "Image": documentName!, "PDF":pdfName] as [String:Any]
         
         dic.append(newBookmark)
-                        
+        
         let savedBookmarks = dic
         
         UserDefaults.standard.set(savedBookmarks, forKey: "MainDic")
@@ -124,7 +130,7 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         }
         
         let alert = UIAlertController(title: "Nuevo marcador", message: "Tu nuevo marcador ha sido guardado con exito. ¿Quieres continuar aqui o ir a tus marcadores?", preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Ir a Marcadores", style: .default, handler: { action in
             
@@ -132,12 +138,27 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
             self.present(myViewController, animated: true, completion: nil)
             
         }))
-
+        
         self.present(alert, animated: true)
-                
+        
     }
     
     func setupDocumentViewer() {
+        
+        if UserDefaults.standard.bool(forKey: "sentFromBookmarks") == true {
+            
+            guard let path = Bundle.main.url(forResource: documentName, withExtension: "pdf") else { return }
+            
+            mainDocument = PDFDocument(url: path)
+            documentViewer.document = mainDocument
+            documentViewer.document?.delegate = self
+            documentViewer.autoScales = true
+            
+            documentVisualAid.image = imageFromBookmarks
+            
+            return
+            
+        }
         
         guard let path = Bundle.main.url(forResource: documentName, withExtension: "pdf") else { return }
         
@@ -147,7 +168,6 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         documentViewer.autoScales = true
         
         documentVisualAid.image = image
-        
         
     }
     
@@ -210,6 +230,74 @@ class documentViewController: UIViewController, PDFDocumentDelegate {
         
         documentViewer.document?.write(to: path!)
         
+        if theMainDic == nil {
+            
+            let dicValue : [[String:Any]] = []
+            
+            UserDefaults.standard.set(dicValue, forKey: "MainDic")
+            
+            theMainDic =  UserDefaults.standard.value(forKey: "MainDic")
+            
+            var dic = theMainDic as! [[String:Any]]
+            
+            let date = Date()
+            
+            let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)", "Pagina":"\(mainDocument.index(for: documentViewer.currentPage!))", "Image": documentName!, "PDF":pdfName] as [String:Any]
+            
+            dic.append(newBookmark)
+            
+            let savedBookmarks = dic
+            
+            UserDefaults.standard.set(savedBookmarks, forKey: "MainDic")
+            if let loadedTasks = UserDefaults.standard.array(forKey: "MainDic") as? [[String: Any]] {
+                print(loadedTasks)
+            }
+            
+            let alert = UIAlertController(title: "Nuevo marcador", message: "Tu nuevo marcador ha sido guardado con exito. ¿Quieres continuar aqui o ir a tus marcadores?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ir a Marcadores", style: .default, handler: { action in
+                
+                let myViewController = bookmarksViewController(nibName: "bookmarksViewController", bundle: nil)
+                self.present(myViewController, animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert, animated: true)
+            
+            return
+            
+        }
+        
+        var dic = theMainDic as! [[String:Any]]
+        
+        let currentTextAndPage = "The selection is: \(documentViewer.currentSelection?.string ?? "") and the page is: \(mainDocument.index(for: documentViewer.currentPage!))"
+        
+        let date = Date()
+        
+        let newBookmark = ["Title" : "\(name ?? "")", "Texto" : "\(documentViewer.currentSelection?.string ?? "")", "Date" : "\(date)", "Pagina":"\(mainDocument.index(for: documentViewer.currentPage!))", "Image": documentName!, "PDF" : pdfName] as [String:Any]
+        
+        dic.append(newBookmark)
+        
+        let savedBookmarks = dic
+        
+        UserDefaults.standard.set(savedBookmarks, forKey: "MainDic")
+        if let loadedTasks = UserDefaults.standard.array(forKey: "MainDic") as? [[String: Any]] {
+            print(loadedTasks)
+        }
+        
+        let alert = UIAlertController(title: "Nuevo marcador", message: "Tu nuevo marcador ha sido guardado con exito. ¿Quieres continuar aqui o ir a tus marcadores?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ir a Marcadores", style: .default, handler: { action in
+            
+            let myViewController = bookmarksViewController(nibName: "bookmarksViewController", bundle: nil)
+            self.present(myViewController, animated: true, completion: nil)
+            
+        }))
+        
+        self.present(alert, animated: true)
+        
     }
     
 }
@@ -240,7 +328,9 @@ extension PDFView{
             return true
             
         }
+        
         return false
+        
     }
     
 }

@@ -94,6 +94,8 @@ class SearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selection = searchResults[indexPath.row]
         
+        print(selection)
+        
         delegate?.searchTableViewController(self, didSelectSerchResult: selection)
         dismiss(animated: false, completion: nil)
     }
