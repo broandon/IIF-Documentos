@@ -94,7 +94,6 @@ class mainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         defaults.set(documentName, forKey: "documentName")
         
-        
         self.hero.isEnabled = true
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
