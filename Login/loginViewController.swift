@@ -112,5 +112,3 @@ class loginViewController: UIViewController {
     }
     
 }
-
-//MARK: Extensions
